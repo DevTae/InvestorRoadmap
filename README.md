@@ -13,7 +13,7 @@
     - 가격 데이터와 재무 데이터를 바탕으로 아래 방식으로 전처리 진행
       - 가격변동성 지표
         - `ATR` : ATRPP (Average True Range Per Price)
-      - 재무안정성 지표
+      - 수익성 지표
         - `배당수익률` (Dividend Yield)
         - `순이익률` (Net Profit Margin)
         - `자본회전율` (Asset Turnover)
