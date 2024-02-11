@@ -14,8 +14,7 @@
       - 가격변동성 지표
         - `ATR` : ATRPP (Average True Range Per Price)
       - 재무안정성 지표
-        - `배당수익률`
-        - `Altman Z Score`
+        - `배당수익률` (Dividend Yield)
         - `순이익률` (Net Profit Margin)
         - `자본회전율` (Asset Turnover)
       - 가치성 지표
