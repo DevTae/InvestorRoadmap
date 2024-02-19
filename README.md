@@ -17,6 +17,9 @@
         - `배당수익률` (Dividend Yield)
         - `순이익률` (Net Profit Margin)
         - `자본회전율` (Asset Turnover)
+      - 안정성 지표
+        - `Altman Z-Score` (부도 위험도 지표)
+        - `부채비율`
       - 가치성 지표
         - `PER` (Price Earning Ratio)
         - `PSR` (Price Sales Ratio)
