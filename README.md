@@ -10,7 +10,8 @@
 
   - 데이터 전처리
     - Pandas DataFrame 형식으로 데이터 전처리 진행
-    - 가격 데이터와 재무 데이터를 바탕으로 아래 방식으로 전처리 진행
+    - 데이터 plotting 및 이상치에 대한 log 연산 진행
+    - 가격 데이터와 재무 데이터를 바탕으로 데이터 선정 및 정규분포화 등 전처리 진행
       - 변동성 지표
         - `ATR` : ATRPP (Average True Range Per Price)
       - 수익성 지표
@@ -18,10 +19,8 @@
         - `순이익률` (Net Profit Margin)
         - `자본회전율` (Asset Turnover)
       - 안정성 지표
-        - `Altman Z-Score` (부도 위험도 지표)
         - `부채비율`
       - 가치성 지표
-        - `PER` (Price Earning Ratio)
         - `PSR` (Price Sales Ratio)
         - `PBR` (Price Book-value Ratio)
       - 모멘텀 지표
@@ -32,6 +31,11 @@
     - 지표 데이터의 분포를 바탕으로 `백분위 분석 기법`을 통해 **스코어링 및 라벨링**을 진행합니다.
     - 사용자의 투자 상태를 위 5가지 지표로 표현할 수 있도록 각각의 지표에 `Linear Regression 모델`을 학습합니다.
     - 이전에 학습한 모델에 대하여 `LIME`(Local Interpretable Model-agnostic Explanation) 기법을 적용하여 현재 투자 습관을 파악하도록 합니다.
+
+  - 모델 검증
+    - `LIME` 모델에 대하여 quartile 방식으로 설계한 이유로 오차가 큰 지표에 대하여 가장 설명력이 큰 feature 를 조정합니다. (다음 분위 중앙값으로 조정)
+    - `RMS` (Root Mean Square) 방식을 활용하여 조정 전과 후에 대한 결과 비교로 설명 모델에 대한 중요도를 파악합니다.
+    - 지표 간의 상관관계 누적합 값을 바탕으로 다양한 지표 조합에 대한 성능을 비교합니다.
    
 - 프로젝트 예시
   - 아래와 같이, 입력된 종목에 대한 피쳐들을 변동성, 수익성, 안정성, 가치성, 모멘텀으로 총 5 가지 측면의 지표로 분석하여 정보를 제공합니다.
